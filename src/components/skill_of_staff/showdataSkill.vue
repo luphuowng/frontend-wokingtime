@@ -57,7 +57,7 @@
                                     <td>{{data.name}}</td>
                                     <td>
                                     <button @click.prevent="showDetail(data.id)"  class="btn btn-primary btn-sm" data-toggle="modal"  data-target=".bd-example-modal-lg"><i class="fas fa-eye"></i> Detail </button> &nbsp;
-                                    <button href="" class="btn btn-danger btn-sm" @click.prevent="click_detroy(data.id)" ><i class="fas fa-trash"></i> Delete </button>
+                                    <button href="" class="btn btn-danger btn-sm" @click.prevent="click_detroy(data.id)" id="NV"><i class="fas fa-trash"></i> Delete </button>
                             </td>
                           
                         </tr>
@@ -160,9 +160,24 @@
 
         mounted() {
               this.checklogin();
+              this.layId_type();
         },
 
         methods: {
+          layId_type: function(){
+            var id = JSON.parse(localStorage.getItem('user')).user.id_type;   
+            console.log('id = ', id);
+            var name = JSON.parse(localStorage.getItem('user')).user.name;   
+            this.name = name;        
+            // neus là admin thì hiển thị các chức năng của admin và ẩn các chức năng của user_thường
+            if(id=='1'){
+              document.getElementsById('NV').style.display = 'none';
+              // var elems = document.getElementById('NV');
+              // for (var i=0;i<elems.length;i+=1){
+              //   elems[i].style.display = 'none';
+              // }
+            }
+          },
             checklogin: function () {
                 axios.get('http://127.0.0.1:8000/api/showSkill', {
                 })
