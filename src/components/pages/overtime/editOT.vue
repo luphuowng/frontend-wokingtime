@@ -76,7 +76,7 @@ export default ({
         id_user: '',
         name:'',
         email:'',
-        phone_number:'',
+        phone_number:'', 
         reason:'',
         number:'',
         ngayDK: '',

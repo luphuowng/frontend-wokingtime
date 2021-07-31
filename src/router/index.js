@@ -42,6 +42,13 @@ import ShowProject from '@/components/pages/project/ShowProject.vue'
 import CreateProject from '@/components/pages/project/CreateProject.vue'
 import UpdateProject from '@/components/pages/project/UpdateProject.vue'
 
+
+// Skill  --son.le & truc.ho--
+import skillRegistration from '../components/skill_of_staff/skill_registration.vue';
+import showdataSkill from '../components/skill_of_staff/showdataSkill.vue';
+import skillEdit from '../components/skill_of_staff/skill_edit.vue';
+//end
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -371,6 +378,40 @@ const routes = [
         'content': ShowProject
       }
     },
+    {
+      path: '/skillRegistration',
+      name: 'skillRegistration',
+      meta: {
+        auth: true
+      },
+      components:{
+        default: admin,
+        'content': skillRegistration
+      }
+    },
+    {
+      path: '/showdataSkill',
+      name: 'showdataSkill',
+      meta: {
+        auth: true
+      },
+      components:{
+        default: admin,
+        'content': showdataSkill
+      }
+    },
+    {
+      path: '/skillEdit/:id',
+      name: 'skillEdit',
+      meta: {
+        auth: true
+      },
+      components:{
+        default: admin,
+        'content': skillEdit
+      }
+    }
+    
 
 ]
 

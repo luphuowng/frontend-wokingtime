@@ -32,33 +32,30 @@
             <div class="row">
               <div class="col-8">
                 <div class="icheck-primary">
-                  <input type="checkbox" id="remember">
-                  <label for="remember">
-                    Remember Me
-                  </label>
+                  <p class="mb-1" style="font-size:15px;">
+                      <a href="http://localhost:8080/Forgot_Password">I forgot my password</a>
+                  </p>
                 </div>
               </div>
+              
               <!-- /.col -->
               <div class="col-4">
-                <button type="submit" @click="login()" class="btn btn-primary btn-block">Sign In</button>
+                <button type="submit" @click="login()" class="btn btn-primary btn-block">Log In</button>
               </div>
               <!-- /.col -->
             </div>
           </form>
 
-          <!-- <div class="social-auth-links text-center mt-2 mb-3">
-            <a href="#" class="btn btn-block btn-primary">
-              <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
-            </a>
-            <a href="#" class="btn btn-block btn-danger">
+           <div class="social-auth-links text-center mt-2 mb-3">
+            <button type="submit" @click="wgitlab()" class="btn btn-block btn-danger">
+              <i class="fab fa-gitlab mr-2"></i> Sign in using Gitlab
+            </button>
+          </div>
+          <!--  <a href="#" class="btn btn-block btn-danger">
               <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
             </a>
           </div> -->
           <!-- /.social-auth-links -->
-
-          <p class="mb-1">
-            <a href="http://localhost:8080/Forgot_Password">I forgot my password</a>
-          </p>
         </div>
         <!-- /.card-body -->
       </div>
@@ -70,10 +67,11 @@
 </template>
 
 <script>
-export default {
-  name: 'Login',
-  props: {
-    msg: String
+  const axios = require('axios');
+  export default {
+    name: 'Login',
+    props: {
+      msg: String
   },
   data () {
     return {
@@ -103,6 +101,21 @@ export default {
         const userData = JSON.parse(userInfo)
         this.$store.commit('setUserData', userData)
       }
+    },
+    // { 
+    //           headers: {
+    //       Authorization: 'Bearer ' + token //the token is a variable which holds the token
+    //     }}
+    wgitlab(){
+      axios.get('http://localhost:8000/api/login-gitlab',{headers: {"Access-Control-Allow-Origin": "*"}})
+        .then( (res) => {
+          console.log(res);
+          if(res.status == 201){
+            //this.$router.push({ name: 'admin' }) 
+          }  
+        }).catch(function (error) {
+          console.log(error)
+        })
     }
   }
 }
@@ -112,4 +125,4 @@ export default {
 <style scoped lang="scss">
 
 
-</style>
+</style> 

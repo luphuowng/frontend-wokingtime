@@ -102,6 +102,32 @@
               </ul>
             </div>
           </li>
+          <li class="sidebar-dropdown">
+            <a>
+              <i class="fas fa-table"></i>
+              <span>Skill Management</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                    <router-link to="/skillRegistration" class="nav-link">
+                      Skill registration
+                    </router-link>
+                </li>
+                
+                <li>
+                    <router-link to="/skillEdit" class="nav-link">
+                      Edit Skills
+                    </router-link>
+                </li>
+                <li>
+                    <router-link to="/showdataSkill" class="nav-link">
+                      Show Skills
+                    </router-link>
+                </li>
+              </ul>
+            </div>
+          </li>
           <li class="header-menu">
             <span>Letter</span>
           </li>
