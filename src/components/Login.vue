@@ -33,7 +33,7 @@
               <div class="col-8">
                 <div class="icheck-primary">
                   <p class="mb-1" style="font-size:15px;">
-                      <a href="http://localhost:8080/Forgot_Password">I forgot my password</a>
+                      <a href="https://workingtimegss.herokuapp.com/Forgot_Password">I forgot my password</a>
                   </p>
                 </div>
               </div>
@@ -107,11 +107,11 @@
     //       Authorization: 'Bearer ' + token //the token is a variable which holds the token
     //     }}
     wgitlab(){
-      axios.get('http://localhost:8000/api/login-gitlab',{headers: {"Access-Control-Allow-Origin": "*"}})
+      axios.get('https://workingtimegss.herokuapp.com/api/login-gitlab',{headers: {"Access-Control-Allow-Origin": "*"}})
         .then( (res) => {
           console.log(res);
           if(res.status == 201){
-            //this.$router.push({ name: 'admin' }) 
+            this.$router.push({ name: 'admin' }) 
           }  
         }).catch(function (error) {
           console.log(error)
