@@ -93,7 +93,7 @@ export default ({
   methods:{
     
     checklogin: function(id){
-      axios.get('http://127.0.0.1:8000/api/editOT/'+id, {
+      axios.get('https://workingtimebegss.herokuapp.com/api/editOT/'+id, {
       })
       .then( response => {
         this.overtime = response.data[0];       

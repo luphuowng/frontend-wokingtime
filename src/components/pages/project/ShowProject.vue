@@ -26,7 +26,7 @@
                         <td>{{data.finish_data}}</td>
                         <td>{{data.detail}}</td>
                         <td>
-                          <a :href="'http://127.0.0.1:8080/UpdateProject/'+ data.id"  class='btn btn-warning' > Update </a>
+                          <a :href="'https://workingtimegss.herokuapp.com/UpdateProject/'+ data.id"  class='btn btn-warning' > Update </a>
                         </td>
                         <td>
                           <a class='btn btn-success' @click.prevent="click_finish(data.id)"> Finished </a>

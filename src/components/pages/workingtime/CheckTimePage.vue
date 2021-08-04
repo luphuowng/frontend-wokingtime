@@ -76,7 +76,7 @@ export default (  {
     },
 
     checkproject: function(){
-      axios.get('http://127.0.0.1:8000/api/getProject',{
+      axios.get('https://workingtimebegss.herokuapp.com/api/getProject',{
       })
       .then(response => {
         this.dataProject = response.data;

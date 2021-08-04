@@ -109,7 +109,7 @@ export default ({
 
   methods: {
     checklogin: function(id){
-      axios.get('http://127.0.0.1:8000/api/editReportProject/'+id, {
+      axios.get('https://workingtimebegss.herokuapp.com/api/editReportProject/'+id, {
       })
       .then( response => {
         this.reports = response.data[0];       

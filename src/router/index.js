@@ -4,7 +4,8 @@ import VueRouter from 'vue-router'
 //login---phuong.nguyen
 import Login from '../components/Login.vue' //login
 import admin from '../components/admin.vue' //logout
-//import RegisterPage from '../components/pages/RegisterPage.vue'//dang ki tai khoan
+import register_account from '../components/pages/account/register_account.vue'//dang ki tai khoan
+import add_type from '../components/pages/account/add_type.vue'
 import Forgot_Password from '@/components/forgot_password/Forgot_Password.vue'
 import Code from '@/components/forgot_password/Code.vue'
 import Change_Pass from '../components/forgot_password/Change_Pass.vue'
@@ -81,6 +82,28 @@ const routes = [
       name: 'Change_Pass',
       component: Change_Pass
     },  
+    {
+      path: "/register_account",
+      name: "register_account",
+      meta: {
+        auth: true
+      },
+      components:{
+        default: admin,
+        'content': register_account
+      }
+    },
+    {
+      path: "/add_type",
+      name: "add_type",
+      meta: {
+        auth: true
+      },
+      components:{
+        default: admin,
+        'content': add_type
+      }
+    },
     //check_in-check_out---hieu.tran
     {
       path: "/CheckTimePage",
@@ -416,9 +439,9 @@ const routes = [
 ]
 
 const router = new VueRouter({
-    mode: 'history',
+    mode: 'hash',
     base: process.env.BASE_URL,
-    routes
+    routes: routes
   })
   
   router.beforeEach((to, from, next) => {

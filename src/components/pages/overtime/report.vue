@@ -136,7 +136,7 @@ export default ({
 
   methods:{
     checklogin: function(){
-      axios.post('http://127.0.0.1:8000/api/getReport',
+      axios.post('https://workingtimebegss.herokuapp.com/api/getReport',
         this.dataInput
       )
       .then( response => {

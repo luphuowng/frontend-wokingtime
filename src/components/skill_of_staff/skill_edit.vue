@@ -126,7 +126,7 @@ export default ({
   
   methods:{
     checklogin: function(){
-        axios.get('http://127.0.0.1:8000/api/editSkill/'+this.$route.params.id,)
+        axios.get('https://workingtimebegss.herokuapp.com/api/editSkill/'+this.$route.params.id,)
         .then( (res) => {
             this.dataResult = res.data[0];
             this.PS = res.data[1];
@@ -167,7 +167,7 @@ export default ({
 
     update: function(){      
       console.log('DL SKILL = ',this.skillForm);
-      axios.post('http://127.0.0.1:8000/api/updateSkill/'+this.$route.params.id,
+      axios.post('https://workingtimebegss.herokuapp.com/api/updateSkill/'+this.$route.params.id,
                this.skillForm
         )
         .then( (res) => {

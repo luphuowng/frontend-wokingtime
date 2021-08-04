@@ -28,7 +28,7 @@
                         <td>{{data.created_at}}</td>
                         <td>{{data.updated_at}}</td>
                         <td>
-                          <a :href="'http://127.0.0.1:8080/CheckOut/'+ data.id"  class='btn btn-warning' > Check-Out </a>
+                          <a :href="'https://workingtimegss.herokuapp.com/CheckOut/'+ data.id"  class='btn btn-warning' > Check-Out </a>
                         </td>
                     </tr>
                 </tbody>
@@ -53,7 +53,7 @@ export default ({
   },
   methods:{
     checklogin: function(){
-      axios.get('http://127.0.0.1:8000/api/showWorkingtime',{
+      axios.get('https://workingtimebegss.herokuapp.com/api/showWorkingtime',{
       })
       .then(response => {
         this.dataworkingtime = response.data;

@@ -95,7 +95,7 @@
 
   methods:{   
     checklogin: function(id){
-      axios.get('http://127.0.0.1:8000/api/dayoff-edit/'+id, {
+      axios.get('https://workingtimebegss.herokuapp.com/api/dayoff-edit/'+id, {
       })
       .then( response => {
         this.day_off = response.data[0];       

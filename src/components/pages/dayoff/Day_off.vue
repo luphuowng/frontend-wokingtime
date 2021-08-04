@@ -54,7 +54,7 @@
                          {{data.off_reason}}
                       </td>
                       <td class="project-actions">
-                          <a :href="'http://localhost:8080/Dayoff_edit/'+data.id" class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i> Sửa </a>
+                          <a :href="'https://workingtimegss.herokuapp.com/Dayoff_edit/'+data.id" class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i> Sửa </a>
                           <a href="" class="btn btn-success btn-sm" @click.prevent="click_apply(data.id)" ><i class="fas fa-clipboard-check"></i> Duyệt </a>
                           <a href="" class="btn btn-danger btn-sm" @click.prevent="click_detroy(data.id)" ><i class="fas fa-trash"></i> Xóa </a>
                       </td>

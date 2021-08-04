@@ -94,7 +94,7 @@ export default ({
 
   methods:{
     checklogin: function(){
-      axios.get('http://127.0.0.1:8000/api/approved/',{
+      axios.get('https://workingtimebegss.herokuapp.com/api/approved/',{
       })
       .then(response => {
          this.dataDayOff = response.data;
